@@ -28,35 +28,35 @@ body {
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-}
 
-body::before {
+  &::before {
     grid-area: before;
-}
+  }
 
-body::after {
-  grid-area: after;
-}
+  &::after {
+    grid-area: after;
+  }
 
-body::before, body::after {
-  content: "";
+  &::before, &::after {
+    content: "";
+  }
 }
 
 a {
-  font-weight: 500;
-}
+font-weight: 500;
 
-a::before {
-  content: "[";
-}
+  &::before {
+    content: "[";
+  }
 
-a::after {
-  content: "]";
-}
+  &::after {
+    content: "]";
+  }
 
-/* a bunch of redundant text-decorations get stacked on top for jest, but this is all we actually need. */
-a:not(:hover) {
-  text-decoration: none;
+  /* a bunch of redundant text-decorations get stacked on top for jest, but this is all we actually need. */
+  &:not(:hover) {
+    text-decoration: none;
+  }
 }
 
 /****************   Nav Section **********************/
@@ -68,17 +68,16 @@ nav {
   margin-bottom: 2rem;
   padding: 0 2rem;
 	background: var(--secondary);
-}
 
-nav a {
-  color: #fff;
+  a {
+    color: #fff;
 
-  /* redundant */
-  text-decoration: none;
-}
-
-nav a:hover {
-  text-decoration: underline;
+    /* redundant */
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
 
 /***********************  Footer Section   **************************/
@@ -86,45 +85,46 @@ footer {
   display: flex;
   justify-content: center;
 	background: var(--secondary);
-}
 
-footer a {
-  color: #fff;
+  a {
+    color: #fff;
 
-  /* redundant */
-  text-decoration: none;
-}
+    &:has(i) {
+      &::before, &::after {
+        content: "";
+      }
+    }
 
-footer a:has(i)::before, footer a:has(i)::after {
-  content: "";
-}
-
-footer a:hover {
-  text-decoration: underline;
+    /* redundant */
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
 
 /*********** Splash Page ************************/
 header {
   display: contents;
-}
 
-header::before {
-  margin: -0.2rem;
-  border-radius: 1.2rem;
-  background: var(--secondary);
-}
+  &::before {
+    margin: -0.2rem;
+    border-radius: 1.2rem;
+    background: var(--secondary);
+  }
 
-header::after {
-  border-radius: 1rem;
-  background: repeating-linear-gradient(-20deg, #fff 0rem 0.5rem, #eee 0.5rem 1rem);
-}
+  &::after {
+    border-radius: 1rem;
+    background: repeating-linear-gradient(-20deg, #fff 0rem 0.5rem, #eee 0.5rem 1rem);
+  }
 
-header::before, header::after {
-  content: "";
+  &::before, &::after {
+    content: "";
 
-  grid-area: splish / forehead / splash / afthead;
+    grid-area: splish / forehead / splash / afthead;
 
-  z-index: -1;
+    z-index: -1;
+  }
 }
 
 header h1 {
@@ -144,7 +144,6 @@ header img {
 
   margin: 1rem 1rem 1rem 0;
   height: 16rem;
-  border-radius: 0;
 }
 
 .address {
@@ -153,19 +152,19 @@ header img {
   position: relative;
   margin-left: 2rem;
   padding-left: 0.5rem;
-}
 
-.address::before {
-  content: "";
+  &::before {
+    content: "";
 
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: -0.2rem;
-  width: 0.2rem;
-  border-radius: 0.1rem;
-  background: var(--primary);
-  display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -0.2rem;
+    width: 0.2rem;
+    border-radius: 0.1rem;
+    background: var(--primary);
+    display: block;
+  }
 }
 
 .tagline {
@@ -183,10 +182,10 @@ hr {
   border: none;
   border-radius: 0.1rem;
   background: var(--secondary);
-}
 
-hr, hr ~ * {
-  grid-column: 1 / 6;
+  &, ~ * {
+    grid-column: 1 / 6;
+  }
 }
 
 section {
@@ -197,7 +196,6 @@ section h3 {
   font-family: "Special Gothic Expanded One", sans-serif;
   font-weight: 400;
   font-style: normal;
-  color: var(--primary);
 }
 
 section dl {
@@ -206,17 +204,17 @@ section dl {
 
 section ul {
   list-style: none;
-}
 
-section ul > li {
-  position: relative;
-}
+  > li {
+    position: relative;
 
-section ul > li::before {
-  content: "-";
+    &::before {
+      content: "-";
 
-  position: absolute;
-  left: -1rem;
+      position: absolute;
+      left: -1rem;
+    }
+  }
 }
 
 section a {
@@ -228,11 +226,36 @@ section a {
 
   /* redundant */
   text-decoration: none;
-}
+  &:hover {
+    text-decoration: underline;
+    text-decoration-color: #a4d7;
+  }
+  
+  /*
+  &::before {
+    margin: -0.2rem;
+    border-radius: 0.4rem;
+    background: var(--secondary);
+  }
 
-section a:hover {
-  text-decoration: underline;
-  text-decoration-color: #a4d7;
+  &::after {
+    margin: -0.1rem;
+    border-radius: 0.3rem;
+    background: #fff;
+  }
+
+  &::before, &::after {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    z-index: -1;
+  }
+  */
 }
 
 /**************   Projects   *****************/
@@ -256,31 +279,31 @@ section a:hover {
   border-radius: 1rem;
   background: repeating-linear-gradient(-20deg, #fff 0rem 0.5rem, #eee 0.5rem 1rem);
   color: #141211;
-}
 
-.card::before {
-  content: "";
+  h3 {
+    text-align: center;
+    font-family: "Cal Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
 
-  position: absolute;
-  top: -0.2rem;
-  right: -0.2rem;
-  bottom: -0.2rem;
-  left: -0.2rem;
-  border-radius: 1.2rem;
-  background: var(--secondary);
+  li {
+    padding-right: 1rem;
+  }
+  
+  &::before {
+    content: "";
 
-  z-index: -1;
-}
+    position: absolute;
+    top: -0.2rem;
+    right: -0.2rem;
+    bottom: -0.2rem;
+    left: -0.2rem;
+    border-radius: 1.2rem;
+    background: var(--secondary);
 
-.card h3 {
-  text-align: center;
-  font-family: "Cal Sans", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.card li {
-  padding-right: 1rem;
+    z-index: -1;
+  }
 }
 
 /**************   Responsiveness   *****************/
@@ -299,10 +322,10 @@ section a:hover {
   display: flex;
   flex-direction: column;
   padding: 2rem 4rem;
-}
 
-.one-col::before {
-  content: "for some ungodly reason we didn't add label elements. in order, the following fields are: name, email, and message."
+  &::before {
+    content: "for some ungodly reason we didn't add label elements. in order, the following fields are: name, email, and message."
+  }
 }
 
 input {
@@ -310,5 +333,5 @@ input {
 }
 
 textarea {
-  margin-bottom: 1rem;
+   margin-bottom: 1rem;
 }
