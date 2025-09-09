@@ -278,7 +278,7 @@ section a {
   padding: 2rem 4rem;
 
   &::before {
-    content: "for some ungodly reason we didn't add label elements. in order, the following fields are: name, email, and message."
+    content: "for some ungodly reason we didn't add label elements and I doubt I'm supposed to arbitrarily change the html. in order, the following fields are: name, email, and message."
   }
 }
 
