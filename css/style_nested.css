@@ -24,10 +24,8 @@ body {
   
   margin: 0;
   color: var(--primary);
-  font-family: "Lexend", sans-serif;
+  font: normal 400 "Lexend", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
 
   &::before {
     grid-area: before;
@@ -121,9 +119,7 @@ header h1 {
   margin: 0 0 0 1rem;
   writing-mode: sideways-lr;
   color: #141211;
-  font-family: "Cal Sans", sans-serif;
-  font-weight: 400;
-  font-style: normal;
+  font: normal 400 "Cal Sans", sans-serif;
 }
 
 header img {
@@ -180,9 +176,7 @@ section {
 }
 
 section h3 {
-  font-family: "Special Gothic Expanded One", sans-serif;
-  font-weight: 400;
-  font-style: normal;
+  font: normal 400 "Special Gothic Expanded One", sans-serif;
 }
 
 section dl {
@@ -235,10 +229,9 @@ section a {
   color: #141211;
 
   h3 {
+    margin: 1rem;
     text-align: center;
-    font-family: "Cal Sans", sans-serif;
-    font-weight: 400;
-    font-style: normal;
+    font: normal 500 x-large "Cal Sans", sans-serifall-petite-caps;
   }
 
   li {
