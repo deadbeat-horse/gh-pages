@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Cal+Sans&family=Lexend:wght@100..900&display=swap');
+
 :root {
   color-scheme: light dark;
   --bg: light-dark(#fff, #141211);
@@ -22,6 +24,10 @@ body {
   
   margin: 0;
   color: var(--primary);
+  font-family: "Lexend", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 
   &::before {
     grid-area: before;
@@ -85,12 +91,16 @@ header h1 {
   margin: 0 0 0 1rem;
   writing-mode: sideways-lr;
   color: #141211;
+  font-family: "Cal Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 header img {
   grid-area: image;
 
   margin: 1rem 1rem 1rem 0;
+  height: 16rem;
 }
 
 .address {
@@ -124,7 +134,7 @@ header img {
 
 /************* Sections ********************/
 hr {
-  margin: 2rem;
+  margin: 2rem 2rem 0;
   height: 0.2rem;
   border: none;
   border-radius: 0.1rem;
@@ -136,7 +146,9 @@ hr {
 }
 
 section h3 {
-  
+  font-family: "Special Gothic Expanded One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 section dl {
@@ -200,7 +212,7 @@ section a:hover {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   column-gap: 1rem;
-  margin: 1rem;
+  margin: 0 0.5rem 2rem;
 }
 
 .card img {
@@ -216,6 +228,13 @@ section a:hover {
   border-radius: 1rem;
   background: repeating-linear-gradient(-20deg, #fff 0rem 0.5rem, #eee 0.5rem 1rem);
   color: #141211;
+
+  h3 {
+    text-align: center;
+    font-family: "Cal Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
   
   &::before {
     content: "";
