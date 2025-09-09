@@ -1,40 +1,138 @@
-body {
+:root {
+  color-scheme: light dark;
+  --bg: light-dark(#fff, #141211);
+  --primary: light-dark(#141211, #fff);
+  --secondary: linear-gradient(60deg, #6C2AED 0%, #8221E0 10%, #CA3364 45% 50%, #DF6120 75%, #ECA413 95% 100%)
+}
 
+/* fix it in post(css) */
+h2:last-of-type::first-letter {
+  text-transform: capitalize;
+}
+
+body {
+  display: grid;
+  grid-auto-flow: row;
+  grid-auto-rows: auto;
+  grid:
+    [navbar-start] "navbar  navbar          navbar  navbar            navbar" auto [navbar-end]
+    [splish-start] "before  name            image   address           after " auto [splish-end]
+    [splash-start] "before  name            image   tagline           after " 1fr  [splash-end]
+    /               1fr     [forehead] auto auto    [afthead] auto    1fr;
+  
+  margin: 0;
+  color: var(--primary);
+
+  &::before {
+    grid-area: before;
   }
+
+  &::after {
+    grid-area: after;
+  }
+
+  &::before, &::after {
+    content: "";
+  }
+}
 
 /****************   Nav Section **********************/
 nav {
-	
+  grid-area: navbar;
+
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  padding: 0 2rem;
+	background: var(--secondary);
 }
 
 /***********************  Footer Section   **************************/
 footer {
-	
+  display: flex;
+  justify-content: center;
+	background: var(--secondary);
 }
 
 /*********** Splash Page ************************/
 header {
+  display: contents;
 
+  &::before {
+    margin: -0.2rem;
+    border-radius: 1.2rem;
+    background: var(--secondary);
+  }
+
+  &::after {
+    border-radius: 1rem;
+    background: repeating-linear-gradient(-20deg, #fff 0rem 0.5rem, #eee 0.5rem 1rem);
+  }
+
+  &::before, &::after {
+    content: "";
+
+    grid-area: splish / forehead / splash / afthead;
+
+    z-index: -1;
+  }
 }
 
 header h1 {
-  
+  grid-area: name;
+
+  text-align: center;
+  margin: 0 0 0 1rem;
+  writing-mode: sideways-lr;
+  color: #141211;
 }
 
 header img {
+  grid-area: image;
+
+  margin: 1rem 1rem 1rem 0;
 }
 
 .address {
- 
+  grid-area: address;
+
+  position: relative;
+  margin-left: 2rem;
+  padding-left: 0.5rem;
+
+  &::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -0.2rem;
+    width: 0.2rem;
+    border-radius: 0.1rem;
+    background: var(--primary);
+    display: block;
+  }
 }
 
 .tagline {
-  
+  grid-area: tagline;
+
+  padding-left: 2rem;
+  width: 50vw;
+  min-width: min-content;
 }
 
 /************* Sections ********************/
 hr {
+  margin: 2rem;
+  height: 0.2rem;
+  border: none;
+  border-radius: 0.1rem;
+  background: var(--secondary);
 
+  &, ~ * {
+    grid-column: 1 / 6;
+  }
 }
 
 section h3 {
@@ -42,31 +140,96 @@ section h3 {
 }
 
 section dl {
-  
+  display: grid;
 }
 
 section ul {
+  list-style: none;
 
+  > li {
+    position: relative;
+
+    &::before {
+      content: "-";
+
+      position: absolute;
+      left: -1rem;
+    }
+  }
 }
 
 section a {
+  position: relative;
+  background: var(--secondary);
+  background-clip: text;
+  color: transparent;
 
+  &::before {
+    margin: -0.2rem;
+    border-radius: 0.4rem;
+    background: var(--secondary);
+  }
+
+  &::after {
+    margin: -0.1rem;
+    border-radius: 0.3rem;
+    background: #fff;
+  }
+
+  &::before, &::after {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    z-index: -1;
+  }
 }
 
 section a:hover {
+  &::after {
+    background-color: #eee;
+  }
 }
 
 /**************   Projects   *****************/
 .three-col {
-	
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 1rem;
+  margin: 1rem;
 }
 
 .card img {
-
+  height: 14rem;
+  width: 100%;
+  overflow-x: hidden;
+  object-fit: cover;
+  object-position: left;
 }
 
 .card {
+  position: relative;
+  border-radius: 1rem;
+  background: repeating-linear-gradient(-20deg, #fff 0rem 0.5rem, #eee 0.5rem 1rem);
+  color: #141211;
   
+  &::before {
+    content: "";
+
+    position: absolute;
+    top: -0.2rem;
+    right: -0.2rem;
+    bottom: -0.2rem;
+    left: -0.2rem;
+    border-radius: 1.2rem;
+    background: var(--secondary);
+
+    z-index: -1;
+  }
 }
 
 /**************   Responsiveness   *****************/

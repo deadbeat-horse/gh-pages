@@ -1,12 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
-    <title>Your Name</title>
-  </head>
-  <body>
-   
-  </body>
+    <title>Powell Whitaker</title>
+    <script src="https://kit.fontawesome.com/70ea948649.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <nav>
+        <p>Powell Whitaker</p>
+        <p><a href="contact.html">Contact Powell Whitaker</a></p>
+    </nav>
+
+    <header>
+        <h1>Powell Whitaker</h1>
+        <img src="images/headshot_styled.png" alt="image of powell whitaker" style="height: 20rem">
+    </header>
+    <p class="address"><!--used to have the class attribute set to "contact-info"-->
+        150 W Broad St Unit 727B, Athens, GA 30601<br>
+        (404) 771-2230<br>
+        business.de@dbeat.horse
+    </p>
+    <p class="tagline">
+        I'm Powell, a CS major at UGA with a particular interest in functional programming,
+        elegant low-level optimizations, and language design. I enjoy nitty-gritty problem
+        solving using well-designed languages.
+    </p>
+    <hr>
+
+    <section>
+        <h2>Education</h2>
+        <dl>
+            <dt>Auburn → need to check</dt>
+            <dd>Computer Science → tranfered to UGA in 2023</dd>
+            <dt>UGA → need to check</dt>
+            <dd>Computer Science → 2026</dd>
+        </dl>
+    </section>
+    <section>
+        <h2>Honors and Awards</h2>
+        <dl>
+            <dt>Invited to Auburn Philosophy Luncheon</dt>
+            <dd>2020 (it was canceled due to the pandemic)</dd>
+        </dl>
+    </section>
+    <section>
+        <h2>skills</h2>
+        <ul>
+            <li>Typescript</li>
+            <li>Rust</li>
+            <li>Elixir</li>
+            <li>C</li>
+            <li>C++</li>
+            <li>Java</li>
+            <li>Lua</li>
+            <li>x86 assembly (it's been hot minute)</li>
+            <li>VBA (please never again)</li>
+            <li>misc. nontrivial config languages + query languages (nix, graphql, powerquery m)</li>
+            <li>misc. oddball languages (applescript, stonescript, mcfunction, etc...)</li>
+        </ul>
+    </section>
+    <section>
+        <h2>Leadership and Experience</h2>
+        <dl>
+            <dt>summer of 2020 and 2021</dt>
+            <dd>paid internship <a href="https://horizonriver.com" target="_blank">at Horizon River</a> (frontend
+                development for angular webapp)</dd>
+
+            <dt>spring through fall of 2023, summer of 2024 and 2025</dt>
+            <dd>paid internship <a href="https://trelleborg.com" target="_blank">at Trelleborg Sealing Solutions</a>
+                (lead programmer for a number of internal tools used by the Ft. Wayne branch)</dd>
+        </dl>
+    </section>
+    <section>
+        <h2>Projects</h2>
+        <div class="three-col">
+            <div class="project card">
+                <h3>coin-cli</h3>
+                <img src="images/coin-cli.png" alt="screenshot of coin-cli in action">
+                <ul>
+                    <li>
+                        simple dice-roller I used when playing D&D with friends.
+                        (yes, I said dice roller — it's a long story that requires
+                        explaining "the anatomy of a coin")
+                    </li>
+                    <li>made with rust to learn its regex and rand crates.</li>
+                </ul>
+            </div>
+            <div class="project card">
+                <h3>datacore</h3>
+                <img src="images/datacore.png" alt="development screenshot of determanistic structure generation">
+                <ul>
+                    <li>
+                        a fairly extensive utility datapack that includes dependancy loading,
+                        random number generation, simulated block lighting, HUD management,
+                        structure generation, data storage, event triggers, and more.
+                    </li>
+                    <li>
+                        shown above is a demo of determenistic pseudo-random number generation
+                        tied to world seed and chunk coordinate being triggered whenever a chunk
+                        is newly generated.
+                    </li>
+                </ul>
+            </div>
+            <div class="project card">
+                <h3>betris bot</h3>
+                <img src="images/betris.png" alt="screenshot of betris-bot in action">
+                <ul>
+                    <li>
+                        a fairly extensive utility datapack that includes dependancy loading,
+                        random number generation, simulated block lighting, HUD management,
+                        structure generation, data storage, event triggers, and more.
+                    </li>
+                    <li>
+                        shown above is a demo of determenistic pseudo-random number generation
+                        tied to world seed and chunk coordinate being triggered whenever a chunk
+                        is newly generated.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <footer>
+        &copy; <a href="contact.html">Powell Whitaker</a>
+        <a href="https://www.linkedin.com/in/powell-whitaker-0913321a5" target="_blank">
+            <i class="fa-brands fa-square-linkedin"></i>
+        </a>
+    </footer>
+</body>
+
 </html>
