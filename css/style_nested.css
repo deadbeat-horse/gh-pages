@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Cal+Sans&family=Lexend:wght@100..900&display=swap');
 
 :root {
-  color-scheme: light dark;
+  color-scheme: light; /*was: light dark*/
   --bg: light-dark(#fff, #141211);
   --primary: light-dark(#141211, #fff);
   --secondary: linear-gradient(60deg, #6C2AED 0%, #8221E0 10%, #CA3364 45% 50%, #DF6120 75%, #ECA413 95% 100%)
@@ -75,6 +75,7 @@ nav {
 footer {
   display: flex;
   justify-content: center;
+  height: 2rem;
   background: var(--secondary);
 
   a {
